@@ -1,8 +1,8 @@
 const HomePage = () => {
   return (
-    <main className='HomePage'>
+    <div className='HomePage'>
       <h3> This will be the home / default page</h3>
-    </main>
+    </div>
   );
 };
 
