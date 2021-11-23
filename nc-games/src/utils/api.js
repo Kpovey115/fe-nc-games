@@ -11,5 +11,9 @@ export const getAllCategories = () => {
 };
 
 export const getReviews = (req) => {
-  const params = { ...req };
+  console.log(req);
+
+  return myApi.get("/reviews", { params: req }).then((res) => {
+    return res.data.reviews;
+  });
 };

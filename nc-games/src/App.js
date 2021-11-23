@@ -24,8 +24,7 @@ function App() {
       <Navbar allCategories={allCategories} />
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/reviews' element={<Reviews />} />
-        <Route path='/reviews/:category' element={<ReviewsByCategory />} />
+        <Route path='/reviews/category/:category' element={<Reviews />} />
       </Routes>
     </main>
   );

@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const NavBar = ({ allCategories }) => {
+  // const handleCategoryFilter = (event) => {
+  //   setSelectedCategory(event.target.outerText);
+  //   console.log(event.target.outerText);
+  // };
   return (
     <nav className='navBar'>
       <Link to={"/"}>
@@ -10,7 +14,7 @@ const NavBar = ({ allCategories }) => {
       <Link to={"/reviews"}>All reviews</Link>
       {allCategories.map((category) => {
         return (
-          <Link to={`/reviews/${category.slug}`}>
+          <Link to={`/reviews/category/${category.slug}`}>
             <h2>{category.slug}</h2>
           </Link>
         );
