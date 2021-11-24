@@ -1,10 +1,23 @@
 import { useState, useEffect } from "react";
+import { patchReview } from "../utils/api";
 
 const ReviewVoter = ({ review }) => {
-  console.log(review);
+  const [votes, setVotes] = useState(0);
+  const voteUpHandler = () => {
+    patchReview(review.review_id, 1);
+    setVotes((prev) => prev + 1);
+  };
+  const voteDownHandler = () => {
+    patchReview(review.review_id, 1);
+    setVotes((prev) => prev - 1);
+  };
   return (
     <section>
-      <p>Total votes: {review.votes} </p> <button>👍 </button>
+      <p>
+        Total votes: {votes + review.votes}
+        <button onClick={voteUpHandler}>👍 </button>
+        <button onClick={voteDownHandler}>👎 </button>
+      </p>
     </section>
   );
 };

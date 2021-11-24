@@ -27,3 +27,11 @@ export const getReviewComments = (review_id) => {
     return res.data.comments;
   });
 };
+
+export const patchReview = (review_id, increment) => {
+  return myApi
+    .patch(`reviews/${review_id}`, { inc_votes: increment })
+    .then(({ data }) => {
+      return data.review;
+    });
+};
