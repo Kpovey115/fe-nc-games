@@ -11,9 +11,19 @@ export const getAllCategories = () => {
 };
 
 export const getReviews = (req) => {
-  console.log(req);
-
   return myApi.get("/reviews", { params: req }).then((res) => {
     return res.data.reviews;
+  });
+};
+
+export const getReviewById = (review_id) => {
+  return myApi.get(`reviews/${review_id}`).then((res) => {
+    return res.data.review;
+  });
+};
+
+export const getReviewComments = (review_id) => {
+  return myApi.get(`reviews/${review_id}/comments`).then((res) => {
+    return res.data.comments;
   });
 };

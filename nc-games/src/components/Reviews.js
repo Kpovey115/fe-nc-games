@@ -1,6 +1,6 @@
 import { getReviews } from "../utils/api";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
@@ -8,8 +8,6 @@ const Reviews = () => {
   const params = {};
   const { category } = useParams();
   params.category = category;
-  console.log(category, "<<<< category");
-  console.log(params.category, "<<<<<<<< params.category");
 
   useEffect(() => {
     getReviews(params).then((reviewsFromServer) => {
@@ -30,7 +28,9 @@ const Reviews = () => {
                   src={review.review_img_url}
                   alt={`img of ${review.title}`}
                 />
-                <h4>{review.title}</h4>
+                <Link to={`/reviews/${review.review_id}`}>
+                  <h4>{review.title}</h4>
+                </Link>
                 <p className='reviewAuthor'>Author: {review.owner}</p>
                 <p className='reviewCategory'>Category: {review.category}</p>
                 <p className='reviewVotes'>Review votes: {review.votes}</p>

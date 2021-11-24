@@ -6,14 +6,19 @@
   grid-template-rows: min-content min-content auto;
 }
 
-.header {
+.Header {
   border: solid red 1px;
 }
 
-.nav {
+nav {
   border: solid blue 1px;
 }
 
-.main {
+main {
   border: solid green 1px;
+}
+
+img {
+  height: 50px;
+  width: 50px;
 }

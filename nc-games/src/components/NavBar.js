@@ -2,10 +2,6 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const NavBar = ({ allCategories }) => {
-  // const handleCategoryFilter = (event) => {
-  //   setSelectedCategory(event.target.outerText);
-  //   console.log(event.target.outerText);
-  // };
   return (
     <nav className='navBar'>
       <Link to={"/"}>
