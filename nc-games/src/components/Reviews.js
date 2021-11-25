@@ -23,7 +23,7 @@ const Reviews = () => {
         <ul>
           {allReviews.map((review) => {
             return (
-              <li>
+              <li key={review.review_id}>
                 <img
                   src={review.review_img_url}
                   alt={`img of ${review.title}`}

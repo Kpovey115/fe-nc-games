@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getReviewById, getReviewComments } from "../utils/api";
 import Comments from "./Comments";
 import ReviewVoter from "./ReviewVoter";
+import WriteComment from "./WriteComment";
 
 const SingleReview = () => {
   const { review_id } = useParams();
@@ -32,6 +33,7 @@ const SingleReview = () => {
         <ReviewVoter review={review} />
       </section>
       <Comments review_id={review_id} />
+      <WriteComment />
     </main>
   );
 };

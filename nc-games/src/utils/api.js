@@ -35,3 +35,20 @@ export const patchReview = (review_id, increment) => {
       return data.review;
     });
 };
+
+export const postComment = (review_id, commentObj) => {
+  const { username, body } = commentObj;
+
+  return myApi
+    .post(`reviews/${review_id}/comments`, { username, body })
+    .then(({ data }) => {
+      console.log(data);
+      return data.review;
+    });
+};
+
+export const deleteComment = (comment_id) => {
+  return myApi.delete(`comments/${comment_id}`).then((res) => {
+    return res.data;
+  });
+};

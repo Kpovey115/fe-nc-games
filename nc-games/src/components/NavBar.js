@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { UserContext } from "../contexts/User";
 
 const NavBar = ({ allCategories }) => {
+  const user = useContext(UserContext);
   return (
     <nav className='navBar'>
       <Link to={"/"}>
@@ -11,10 +13,11 @@ const NavBar = ({ allCategories }) => {
       {allCategories.map((category) => {
         return (
           <Link to={`/reviews/category/${category.slug}`}>
-            <h2>{category.slug}</h2>
+            <h2 key={category.slug}>{category.slug}</h2>
           </Link>
         );
       })}
+      <h2>User: {user.username}</h2>
     </nav>
   );
 };
