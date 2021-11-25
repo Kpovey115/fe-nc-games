@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getReviewComments } from "../utils/api";
 import DeleteComment from "./DeleteComment";
+import CommentVoter from "./CommentVoter";
 
 const Comments = ({ review_id }) => {
   const [allComments, setAllComments] = useState([]);
@@ -18,7 +19,10 @@ const Comments = ({ review_id }) => {
           <article key={comment.comment_id}>
             <h4 className='commentAuthor'>{comment.author}</h4>
             <p className='commentBody'>{comment.body}</p>
-            <p className='commentVotes'>Votes: {comment.votes}</p>
+            <CommentVoter
+              votes={comment.votes}
+              comment_id={comment.comment_id}
+            />
             <DeleteComment comment_id={comment.comment_id} />
           </article>
         );

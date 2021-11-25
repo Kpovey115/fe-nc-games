@@ -34,6 +34,7 @@ const SingleReview = () => {
       </section>
       <Comments review_id={review_id} />
       <WriteComment />
+      
     </main>
   );
 };

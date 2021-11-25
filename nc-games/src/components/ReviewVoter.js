@@ -8,7 +8,7 @@ const ReviewVoter = ({ review }) => {
     setVotes((prev) => prev + 1);
   };
   const voteDownHandler = () => {
-    patchReview(review.review_id, 1);
+    patchReview(review.review_id, -1);
     setVotes((prev) => prev - 1);
   };
   return (

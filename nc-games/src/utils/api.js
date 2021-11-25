@@ -52,3 +52,11 @@ export const deleteComment = (comment_id) => {
     return res.data;
   });
 };
+
+export const patchComment = (comment_id, increment) => {
+  return myApi
+    .patch(`comments/${comment_id}`, { inc_votes: increment })
+    .then(({ data }) => {
+      return data.review;
+    });
+};
