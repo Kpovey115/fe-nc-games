@@ -34,6 +34,7 @@ const WriteComment = () => {
           rows='5'
           cols='50'
           placeholder='Write here!'
+          required
         ></textarea>
         <input type='submit' value='Submit'></input>
       </form>

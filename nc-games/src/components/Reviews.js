@@ -5,30 +5,40 @@ import { useParams, Link } from "react-router-dom";
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
   const [selectSortBy, setSelectSortBy] = useState([]);
+  const [selectOrder, setSelectOrder] = useState([]);
   const params = {};
   const { category } = useParams();
   params.category = category;
   params.sort_by = selectSortBy;
+  params.order = selectOrder;
 
   useEffect(() => {
     getReviews(params).then((reviewsFromServer) => {
       setAllReviews(reviewsFromServer);
     });
-  }, [category, selectSortBy]);
+  }, [category, selectSortBy, selectOrder]);
 
   const handleSortBy = (event) => {
     setSelectSortBy(event.target.value);
-    console.log(event.target.value);
+  };
+
+  const handleOrder = (event) => {
+    setSelectOrder(event.target.value);
   };
   return (
     <main className='Reviews'>
-      <section onChange={handleSortBy}>
+      <section>
         <h3>Reviews!</h3>
         <label>Sort By: </label>
-        <select>
+        <select className='sort_by' onChange={handleSortBy}>
           <option value='created_at'>Newest</option>
           <option value='comment_count'>comment count</option>
           <option value='votes'>Votes</option>
+        </select>
+        <label>Order By: </label>
+        <select className='order' onChange={handleOrder}>
+          <option value='asc'>ASC</option>
+          <option value='desc'>DESC</option>
         </select>
 
         <ul>
