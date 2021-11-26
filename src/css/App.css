@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Estonia&family=Lobster+Two&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+.App {
+  text-align: center;
+  font-family: "PT Serif", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content min-content auto;
+}
+
+.Header {
+  font-family: "Estonia", sans-serif;
+  font-size: 40px;
+  border: solid red 1px;
+}
+
+nav {
+  border: solid blue 1px;
+}
+
+main {
+  border: solid green 1px;
+}
+
+img {
+  height: 50px;
+  width: 50px;
+}
+
+section {
+  border: solid 1px peru;
+}
+
+.navBar {
+  background-color: plum;
+}
+
+.HomePage {
+  background-color: rgba(175, 238, 238, 0.746);
+  text-align: center;
+  max-width: 100%;
+  font-size: 20px;
+}
+.HomePage > figure > Img {
+  width: auto;
+  height: 40vh;
+}
