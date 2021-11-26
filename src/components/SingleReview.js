@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
-import { getReviewById, getReviewComments } from "../utils/api";
+import { getReviewById } from "../utils/api";
 import Comments from "./Comments";
 import ReviewVoter from "./ReviewVoter";
 import WriteComment from "./WriteComment";
@@ -34,7 +34,6 @@ const SingleReview = () => {
       </section>
       <Comments review_id={review_id} />
       <WriteComment />
-      
     </main>
   );
 };

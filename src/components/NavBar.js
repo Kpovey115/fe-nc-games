@@ -7,7 +7,7 @@ const NavBar = ({ allCategories }) => {
   return (
     <nav className='navBar'>
       <Link to={"/"}>
-        <h2>Home Page</h2>
+        <h2 key='homepage'>Home Page</h2>
       </Link>
       <Link to={"/reviews"}>All reviews</Link>
       {allCategories.map((category) => {
@@ -17,7 +17,7 @@ const NavBar = ({ allCategories }) => {
           </Link>
         );
       })}
-      <h2>User: {user.username}</h2>
+      <h2 key='username'>User: {user.username}</h2>
     </nav>
   );
 };

@@ -42,7 +42,6 @@ export const postComment = (review_id, commentObj) => {
   return myApi
     .post(`reviews/${review_id}/comments`, { username, body })
     .then(({ data }) => {
-      console.log(data);
       return data.review;
     });
 };
