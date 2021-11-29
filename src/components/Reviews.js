@@ -26,7 +26,7 @@ const Reviews = () => {
     setSelectOrder(event.target.value);
   };
   return (
-    <main className='Reviews'>
+    <main className='reviewsFilter'>
       <section>
         <h3>Reviews!</h3>
         <label>Sort By: </label>
@@ -44,7 +44,7 @@ const Reviews = () => {
         <ul>
           {allReviews.map((review) => {
             return (
-              <li key={review.review_id}>
+              <li key={review.review_id} className='review'>
                 <img
                   src={review.review_img_url}
                   alt={`img of ${review.title}`}

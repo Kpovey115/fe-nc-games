@@ -33,6 +33,8 @@ section {
 }
 
 .navBar {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
   background-color: plum;
 }
 
@@ -45,4 +47,29 @@ section {
 .HomePage > figure > Img {
   width: auto;
   height: 40vh;
+}
+.reviewsFilter {
+  background-color: #b5e48c;
+}
+
+.review {
+  /* card layout*/
+  margin: auto;
+  background-color: #4895ef;
+  width: 40%;
+  list-style: none;
+}
+
+.review > img {
+  width: 100%;
+  height: 80%;
+}
+
+.review h4 {
+  font-size: 30px;
+  color: #99d98c;
+}
+
+.review > p {
+  font-size: 20px;
 }

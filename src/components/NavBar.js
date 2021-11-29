@@ -6,14 +6,16 @@ const NavBar = ({ allCategories }) => {
   const user = useContext(UserContext);
   return (
     <nav className='navBar'>
-      <Link to={"/"}>
-        <h2 key='homepage'>Home Page</h2>
+      <Link to={"/"} key='homepage'>
+        <h2>Home Page</h2>
       </Link>
-      <Link to={"/reviews"}>All reviews</Link>
+      <Link to={"/reviews"} key='allReviews'>
+        <h2>All reviews</h2>
+      </Link>
       {allCategories.map((category) => {
         return (
-          <Link to={`/reviews/category/${category.slug}`}>
-            <h2 key={category.slug}>{category.slug}</h2>
+          <Link to={`/reviews/category/${category.slug}`} key={category.slug}>
+            <h2>{category.slug}</h2>
           </Link>
         );
       })}
