@@ -16,7 +16,7 @@ const SingleReview = () => {
   }, []);
 
   return (
-    <main>
+    <main className='singleReview'>
       <section className='review'>
         <h3 className='reviewTitle'>{review.title}</h3>
         <img

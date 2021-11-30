@@ -12,24 +12,7 @@
 .Header {
   font-family: "Estonia", sans-serif;
   font-size: 40px;
-  border: solid red 1px;
-}
-
-nav {
-  border: solid blue 1px;
-}
-
-main {
-  border: solid green 1px;
-}
-
-img {
-  height: 50px;
-  width: 50px;
-}
-
-section {
-  border: solid 1px peru;
+  background-color: salmon;
 }
 
 .navBar {
@@ -72,4 +55,14 @@ section {
 
 .review > p {
   font-size: 20px;
+}
+
+.singleReview {
+  background-color: #99d98c;
+}
+
+.comment {
+  background-color: rgba(175, 238, 238, 0.746);
+  width: 40%;
+  margin: auto;
 }
