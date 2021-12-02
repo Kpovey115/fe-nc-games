@@ -13,7 +13,7 @@ const SingleReview = () => {
     getReviewById(Number(review_id)).then((reviewFromServer) => {
       setReview(reviewFromServer);
     });
-  }, []);
+  }, [review_id]);
 
   return (
     <main className='singleReview'>
