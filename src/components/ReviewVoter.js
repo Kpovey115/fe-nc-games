@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { patchReview } from "../utils/api";
 
 const ReviewVoter = ({ review }) => {
