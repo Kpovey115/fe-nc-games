@@ -16,7 +16,7 @@ const Reviews = () => {
     getReviews(params).then((reviewsFromServer) => {
       setAllReviews(reviewsFromServer);
     });
-  }, [category, selectSortBy, selectOrder]);
+  }, [params]);
 
   const handleSortBy = (event) => {
     setSelectSortBy(event.target.value);
