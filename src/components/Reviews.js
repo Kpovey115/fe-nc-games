@@ -6,17 +6,18 @@ const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
   const [selectSortBy, setSelectSortBy] = useState([]);
   const [selectOrder, setSelectOrder] = useState([]);
-  const params = {};
+
   const { category } = useParams();
-  params.category = category;
-  params.sort_by = selectSortBy;
-  params.order = selectOrder;
 
   useEffect(() => {
+    const params = {};
+    params.category = category;
+    params.sort_by = selectSortBy;
+    params.order = selectOrder;
     getReviews(params).then((reviewsFromServer) => {
       setAllReviews(reviewsFromServer);
     });
-  }, [params]);
+  }, [category, selectOrder, selectSortBy]);
 
   const handleSortBy = (event) => {
     setSelectSortBy(event.target.value);

@@ -10,7 +10,7 @@ const Comments = ({ review_id }) => {
     getReviewComments(Number(review_id)).then((commentsFromServer) => {
       setAllComments(commentsFromServer);
     });
-  }, []);
+  }, [review_id]);
 
   return (
     <section className='comment'>
